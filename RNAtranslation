@@ -1,0 +1,63 @@
+#RNA翻訳
+
+sequence = input("enter the RNA sequence")
+
+sequence = sequence.lower()
+
+peptide = ""
+for i in range(0, int(len(sequence) / 3)):
+    codon = sequence[i*3: i*3+3]
+    if codon == "uuu" or codon == "uuc":
+        peptide += "F"
+    elif codon == "uua" or codon == "uug" or codon == "cuu" or\
+    codon ==  "cuc" or codon == "cua" or codon == "cug":
+        peptide += "L"
+    elif codon == "auu" or codon == "auc" or codon == "aua":
+        peptide += "I"
+    elif codon == "aug":
+        peptide += "M"
+    elif codon == "guu" or codon =="guc" or codon == "gua" or \
+    codon == "gug":
+        peptide += "V"
+    elif codon == "ucu" or codon == "ucc" or codon == "uca" or \
+    codon == "ucg":
+        peptide += "S"
+    elif codon == "ccu" or codon == "ccc" or codon == "cca" or \
+    codon == "ccg":
+        peptide += "P"
+    elif codon == "acu" or codon == "acc" or codon == "aca" or \
+    codon == "acg":
+        peptide += "T"
+    elif codon == "gcu" or codon == "gcc" or codon == "gca" or \
+    codon == "gcg":
+        peptide += "A"
+    elif codon == "uau" or codon == "uac":
+        peptide += "Y"
+    elif codon == "cau" or codon == "cac":
+        peptide += "H"
+    elif codon == "cau" or codon == "cac":
+        peptide += "Q"
+    elif codon == "aau" or codon == "aac":
+        peptide += "N"
+    elif codon == "aaa" or codon == "aag":
+        peptide += "K"
+    elif codon == "gau" or codon == "gac":
+        peptide += "D"
+    elif codon == "gaa" or codon == "gag":
+        peptide += "E"
+    elif codon == "ugu" or codon == "ugc":
+        peptide += "C"
+    elif codon == "ugg":
+        peptide += "W"
+    elif codon == "cgu" or codon == "cgc" or codon == "cga" or \
+    codon == "cgg" or codon == "aga" or codon == "agg":
+        peptide += "R"
+    elif codon == "agu" or codon == "agc":
+        peptide += "S"
+    elif codon == "ggu" or codon == "ggc" or codon == "gga" or \
+    codon == "ggg":
+        peptide += "G"
+    elif codon == "uaa" or codon == "uag" or codon == "uga":
+        break
+
+print("peptide : ", peptide)
